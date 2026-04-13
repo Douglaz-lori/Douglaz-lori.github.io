@@ -20,11 +20,11 @@
 
         .guilda-container {
             background-color: #000;
-            border: 4px solid #0000FF;
+            border: 4px solid #0000FF; /* Azul da Guilda */
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 0 25px #FFFF00;
+            box-shadow: 0 0 25px #FFFF00; /* Amarelo da Guilda */
             max-width: 600px;
         }
 
@@ -37,8 +37,8 @@
         }
 
         .passo {
-            margin: 20px 0;
-            padding: 15px;
+            margin: 15px 0;
+            padding: 10px;
             background: rgba(0, 0, 255, 0.1);
             border-left: 5px solid #FFFF00;
             text-align: left;
@@ -68,26 +68,31 @@
 
     <div class="guilda-container">
         <h1>⚔️ Visão da Guilda ⚔️</h1>
-        <p>Artefato otimizado para evitar o bloqueio da Crunchyroll.</p>
+        <p>Solução final para o bloqueio da Crunchyroll.</p>
 
         <div class="passo">
-            <b>1.</b> Arraste o botão azul para a sua <b>Barra de Favoritos</b> (Ctrl+Shift+B).
+            1. Arraste o botão para a sua <b>Barra de Favoritos</b> (Ctrl+Shift+B).
         </div>
 
         <a class="reliquia-botao" href="javascript:(function(){
-            var url = prompt('Cole o link da Crunchyroll:');
+            var url = prompt('Cole o link do episódio da Crunchyroll:');
             if(url){
+                /* Abre em janela separada para o site não recusar a conexão */
                 var w = 854; var h = 480;
                 var left = (screen.width/2)-(w/2);
                 var top = (screen.height/2)-(h/2);
-                var win = window.open(url, 'VisaoGuilda', 'width='+w+',height='+h+',top='+top+',left='+left+',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes');
-                if (win) { win.focus(); } 
-                else { alert('⚠️ O navegador bloqueou o pop-up! Clique no ícone de bloqueio na barra de endereços e permita.'); }
+                var win = window.open(url, 'VisaoGuilda', 'width='+w+',height='+h+',top='+top+',left='+left+',toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=yes');
+                if (win) { 
+                    win.focus(); 
+                    alert('🛡️ Artefato Ativado! Ajuste a janela sobre a sua live.');
+                } else { 
+                    alert('⚠️ Pop-up bloqueado! Clique no ícone de X na barra de endereços e escolha SEMPRE PERMITIR.'); 
+                }
             }
-        })()">🛡️ ARTEFATO DE VISÃO</a>
+        })()">🛡️ ATIVAR VISÃO v4</a>
 
         <div class="passo">
-            <b>2.</b> Na Kick, clique no favorito, cole o link e ajuste a janelinha sobre a live.
+            2. Quando a janela abrir, ela não terá barras de menu, parecendo um player nativo.
         </div>
     </div>
 
