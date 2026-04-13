@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal da Guilda - Visão Crunchyroll</title>
+    <title>Portal da Guilda - Visão de Anime</title>
     <style>
+        /* Estética da Guilda: Preto, Azul e Amarelo */
         body {
             background-color: #050505;
             color: #ffffff;
@@ -41,6 +42,7 @@
             padding: 15px;
             background: rgba(0, 0, 255, 0.1);
             border-left: 5px solid #FFFF00;
+            text-align: left;
         }
 
         .reliquia-botao {
@@ -61,6 +63,13 @@
         .reliquia-botao:hover {
             background-color: #FFFF00;
             color: #0000FF;
+            box-shadow: 0 0 20px #FFFF00;
+        }
+
+        .aviso {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -68,30 +77,33 @@
 
     <div class="guilda-container">
         <h1>⚔️ Visão da Guilda ⚔️</h1>
-        <p>Artefato atualizado para <b>Crunchyroll</b> e outros portais.</p>
+        <p>Ative o artefato para assistir Crunchyroll sincronizado com a live.</p>
 
         <div class="passo">
-            1. Arraste o botão abaixo para a sua <b>Barra de Favoritos</b>.
+            <b>1.</b> Arraste o botão abaixo para a sua <b>Barra de Favoritos</b> (Ctrl+Shift+B para mostrar a barra).
         </div>
 
         <a class="reliquia-botao" href="javascript:(function(){
             var url = prompt('Cole o link do episódio da Crunchyroll:');
             if(url){
-                var largura = 854;
-                var altura = 480;
-                var esquerda = (screen.width - largura) / 2;
-                var topo = (screen.height - altura) / 2;
-                window.open(url, 'VisaoDaGuilda', 'width='+largura+',height='+altura+',top='+topo+',left='+esquerda+',toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=yes');
+                var win = window.open(url, '_blank');
+                if (win) {
+                    win.focus();
+                } else {
+                    alert('⚠️ O navegador bloqueou a janela! Permita pop-ups para este site.');
+                }
             }
-        })()">🛡️ ARTEFATO DE VISÃO v2</a>
+        })()">🛡️ ARTEFATO DE VISÃO</a>
 
         <div class="passo">
-            2. Durante a Live, clique no favorito e cole o link do episódio.
+            <b>2.</b> Durante a live na Kick, clique no favorito e cole o link do anime.
         </div>
 
         <div class="passo">
-            3. Ajuste a janelinha que abrir sobre a Live da Kick!
+            <b>3.</b> Arraste a nova aba para fora e ajuste-a sobre a live do Doug!
         </div>
+
+        <p class="aviso">Otimizado para burlar o erro "Refused to Connect" em portais protegidos.</p>
     </div>
 
 </body>
