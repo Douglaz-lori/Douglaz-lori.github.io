@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Guilda - Visão de Anime</title>
+    <style>
+        /* Paleta: Preto (#000), Azul (#0000FF) e Amarelo (#FFFF00) */
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Georgia', serif; /* Fonte mais clássica/medieval */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .guilda-container {
+            background-color: #000;
+            border: 4px solid #0000FF; /* Borda Azul */
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 25px #FFFF00; /* Brilho Amarelo */
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #FFFF00; /* Título Amarelo */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #0000FF;
+            padding-bottom: 10px;
+        }
+
+        .passo {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 0, 255, 0.1);
+            border-left: 5px solid #FFFF00;
+        }
+
+        .numero {
+            color: #FFFF00;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* O Botão de Bookmarklet (A Relíquia) */
+        .reliquia-botao {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 20px 40px;
+            background-color: #0000FF; /* Azul */
+            color: #FFFF00; /* Amarelo */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 2px solid #FFFF00;
+            border-radius: 5px;
+            cursor: move;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px #0000FF;
+        }
+
+        .reliquia-botao:hover {
+            background-color: #FFFF00;
+            color: #0000FF;
+            box-shadow: 0 0 20px #FFFF00;
+        }
+
+        .info-tecnica {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="guilda-container">
+        <h1>⚔️ Visão da Guilda ⚔️</h1>
+        <p>Ative o artefato para assistir animes sincronizados sem interrupções.</p>
+
+        <div class="passo">
+            <span class="numero">1.</span> Arraste o botão azul abaixo para a sua <b>Barra de Favoritos</b>.
+        </div>
+
+        <a class="reliquia-botao" href="javascript:(function(){
+            var link = prompt('Digite o ID da Sala ou Link do Anime:');
+            if(link){
+                var d=document;
+                var s=d.createElement('div');
+                s.style.cssText='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;height:80%;z-index:999999;border:5px solid #0000FF;box-shadow:0 0 30px #FFFF00;background:#000;';
+                s.innerHTML='<div style=\'text-align:right;background:#0000FF;color:#FFFF00;cursor:pointer;padding:5px;font-weight:bold;\' onclick=\'this.parentElement.remove()\'>[ FECHAR X ]</div><iframe src=\''+link+'\' width=\'100%\' height=\'95%\' frameborder=\'0\' allowfullscreen></iframe>';
+                d.body.appendChild(s);
+            }
+        })()">🛡️ ARTEFATO DE VISÃO</a>
+
+        <div class="passo">
+            <span class="numero">2.</span> Entre na nossa Live da Kick e clique no favorito <b>"🛡️ ARTEFATO DE VISÃO"</b>.
+        </div>
+
+        <p class="info-tecnica">Compatível com Chrome, Edge, Firefox e Safari.<br>Funciona em PC e Mobile (via favoritos).</p>
+    </div>
+
+</body>
+</html>
