@@ -8,41 +8,26 @@
         body {
             background-color: #050505;
             color: #ffffff;
-            font-family: 'Georgia', serif;
+            font-family: 'Segoe UI', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
         }
 
         .guilda-container {
             background-color: #000;
-            border: 4px solid #0000FF; /* Azul da Guilda */
+            border: 4px solid #0000FF;
             padding: 30px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 0 25px #FFFF00; /* Amarelo da Guilda */
-            max-width: 600px;
+            box-shadow: 0 0 25px #FFFF00;
+            max-width: 500px;
         }
 
-        h1 {
-            color: #FFFF00;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border-bottom: 2px solid #0000FF;
-            padding-bottom: 10px;
-        }
-
-        .passo {
-            margin: 15px 0;
-            padding: 10px;
-            background: rgba(0, 0, 255, 0.1);
-            border-left: 5px solid #FFFF00;
-            text-align: left;
-        }
+        h1 { color: #FFFF00; text-transform: uppercase; }
 
         .reliquia-botao {
             display: inline-block;
@@ -52,47 +37,42 @@
             color: #FFFF00;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
             border: 2px solid #FFFF00;
             border-radius: 5px;
             cursor: move;
         }
 
-        .reliquia-botao:hover {
-            background-color: #FFFF00;
-            color: #0000FF;
+        .passo {
+            margin: 15px 0;
+            text-align: left;
+            font-size: 0.9em;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
 
     <div class="guilda-container">
-        <h1>⚔️ Visão da Guilda ⚔️</h1>
-        <p>Solução final para o bloqueio da Crunchyroll.</p>
+        <h1>⚔️ VISÃO DA GUILDA ⚔️</h1>
+        <p>Ajustado para funcionar com Crunchyroll.</p>
 
         <div class="passo">
-            1. Arraste o botão para a sua <b>Barra de Favoritos</b> (Ctrl+Shift+B).
+            <b>1.</b> Arraste o botão azul para sua barra de favoritos.
         </div>
 
         <a class="reliquia-botao" href="javascript:(function(){
             var url = prompt('Cole o link do episódio da Crunchyroll:');
             if(url){
-                /* Abre em janela separada para o site não recusar a conexão */
-                var w = 854; var h = 480;
-                var left = (screen.width/2)-(w/2);
-                var top = (screen.height/2)-(h/2);
-                var win = window.open(url, 'VisaoGuilda', 'width='+w+',height='+h+',top='+top+',left='+left+',toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=yes');
-                if (win) { 
-                    win.focus(); 
-                    alert('🛡️ Artefato Ativado! Ajuste a janela sobre a sua live.');
-                } else { 
-                    alert('⚠️ Pop-up bloqueado! Clique no ícone de X na barra de endereços e escolha SEMPRE PERMITIR.'); 
-                }
+                window.open(url, 'Viseira', 'width=800,height=450,location=no,toolbar=no,menubar=no');
             }
-        })()">🛡️ ATIVAR VISÃO v4</a>
+        })()">🛡️ ARTEFATO DE VISÃO FINAL</a>
 
         <div class="passo">
-            2. Quando a janela abrir, ela não terá barras de menu, parecendo um player nativo.
+            <b>2.</b> Clique no favorito enquanto está na Kick e cole o link.
+        </div>
+        
+        <div class="passo">
+            <b>3.</b> <b>IMPORTANTE:</b> Se não abrir, clique no ícone de "Pop-up bloqueado" no topo do navegador e marque "Sempre permitir".
         </div>
     </div>
 
